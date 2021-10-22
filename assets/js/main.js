@@ -8,3 +8,13 @@ btnTarefa.addEventListener('click', function() {
     if (!inputTarefa.value) return;
     criaTarefa(inputTarefa.value);
 });
+
+function criaTarefa(textoInput) { 
+    const li = criaLi();
+    li.innerText = textoInput;
+    tarefas.appendChild(li);
+    limpaInput();
+    criaBotaoApagar(li);
+    salvarTarefas();
+    
+}
