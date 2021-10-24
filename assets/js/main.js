@@ -18,3 +18,8 @@ function criaTarefa(textoInput) {
     salvarTarefas();
     
 }
+
+function criaLi () {
+    const li = document.createElement('li');
+    return li;
+}
