@@ -30,3 +30,8 @@ inputTarefa.addEventListener('keypress', function(e) {
         criaTarefa(inputTarefa.value);
     }
 });
+
+function limpaInput () {
+    inputTarefa.value = '';
+    inputTarefa.focus();
+}
