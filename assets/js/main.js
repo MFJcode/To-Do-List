@@ -35,3 +35,13 @@ function limpaInput () {
     inputTarefa.value = '';
     inputTarefa.focus();
 }
+
+function criaBotaoApagar(li) {
+    li.innerText += ' ';
+    const botaoApagar = document.createElement('button');
+    botaoApagar.innerText = 'Apagar';
+    // botaoApagar.classList.add('apagar'); poderia ter criado assim criando uma classe mas vamos ver de outra forma com atributo, por que o botao foi criando diretamente pelo javascript
+    botaoApagar.setAttribute('class', 'apagar');
+    botaoApagar.setAttribute('title', 'Apagar esta tarefa');
+    li.appendChild(botaoApagar);
+}
