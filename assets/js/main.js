@@ -45,3 +45,13 @@ function criaBotaoApagar(li) {
     botaoApagar.setAttribute('title', 'Apagar esta tarefa');
     li.appendChild(botaoApagar);
 }
+
+document.addEventListener('click', function(e) {
+    const el = e.target;
+    
+    if (el.classList.contains('apagar')) {
+        el.parentElement.remove();
+        salvarTarefas();
+
+    }
+})
