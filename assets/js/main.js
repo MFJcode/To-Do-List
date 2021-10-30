@@ -40,7 +40,6 @@ function criaBotaoApagar(li) {
     li.innerText += ' ';
     const botaoApagar = document.createElement('button');
     botaoApagar.innerText = 'Apagar';
-    // botaoApagar.classList.add('apagar'); poderia ter criado assim criando uma classe mas vamos ver de outra forma com atributo, por que o botao foi criando diretamente pelo javascript
     botaoApagar.setAttribute('class', 'apagar');
     botaoApagar.setAttribute('title', 'Apagar esta tarefa');
     li.appendChild(botaoApagar);
@@ -55,3 +54,21 @@ document.addEventListener('click', function(e) {
 
     }
 })
+
+
+function salvarTarefas () {
+    const liTarefas = tarefas.querySelectorAll('li');
+    const listaDeTarefas = [];
+
+    for (let tarefa of liTarefas) {
+       let tarefaTexto = tarefa.innerText;
+       tarefaTexto = tarefaTexto.replace('Apagar', '').trim();
+       listaDeTarefas.push(tarefaTexto);
+       
+    }
+
+    const tarefasJSON = JSON.stringify(listaDeTarefas); 
+    localStorage.setItem('tarefas', tarefasJSON);
+    
+
+}
